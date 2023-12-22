@@ -1,7 +1,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-# HkrAI
+# **hkrAI**
 
 ## The keep it simple approach to integrating the world's most power AI into your Linux terminal.
 
