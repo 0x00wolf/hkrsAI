@@ -9,8 +9,6 @@ hkrAI is modeled as a finite state machine, allowing you to perpetually engage i
 
 I built hkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
-All of the program's logic is in one file, with as logical and clean code as I can muster. If you want to edit any features, please fork the project or reach out to me with your ideas.
-
 <!-- GETTING STARTED -->
 ### Getting started:
 
