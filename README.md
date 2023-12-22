@@ -29,7 +29,7 @@ HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
    ```
 4. Run the program
    ```Python
-   ./Hkrai.py 
+   ./hkrai.py 
    ```
 5. Input your API when prompted.
 6. Select a premad system prompt or input your own.
