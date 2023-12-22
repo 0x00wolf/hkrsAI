@@ -1,18 +1,18 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## hkrAI - the keep it simple approach to integrating the world's most power AI into your Linux terminal.
+## HkrAI - the keep it simple approach to integrating the world's most power AI into your Linux terminal.
 
 In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily.
 
-hkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (AwesomeChatGPTFonts), which can be selected via a convenient menu system at anytime within the program.
+HkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (AwesomeChatGPTFonts), which can be selected via a convenient menu system at anytime within the program.
 
-I built hkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+I built HkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 <!-- GETTING STARTED -->
 ### Getting started:
 
-hkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
+HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
 **Steps to install:**
 
@@ -27,7 +27,7 @@ hkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
    ```
 4. Run the program
    ```Python
-   ./hkrai.py 
+   ./Hkrai.py 
    ```
 5. Input your API when prompted.
 6. Select a premad system prompt or input your own.
@@ -35,7 +35,7 @@ hkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
 ---
 ### First Runtime
 
-The first time you run hkrAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, hkrAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
+The first time you run HkrAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, HkrAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
 
 Logfiles will be saved in the logs folder in the parent directory. This will also be generated on the first runtime.
 
@@ -44,10 +44,10 @@ Logfiles will be saved in the logs folder in the parent directory. This will als
 
 The command line arguments include each of the GPT API's parameters, as well as logging-level, log format, and system prompt.
 
-To view detailed information about hkrAI's runtime parameters in the terminal, you can input:
+To view detailed information about HkrAI's runtime parameters in the terminal, you can input:
 
 ```python
-./hkrai.py -h
+./Hkrai.py -h
 ```
 
 Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see: [OpenAI's Docs](https://openai.com
@@ -56,7 +56,7 @@ _For more examples, please refer to the [OpenAI API Documentation](https://platf
 Example runtime arguments:
 
 ```bash
-./hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
+./Hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
 ```
 ---
 ### Context Management Commands
@@ -179,4 +179,4 @@ save reply ./dns_tunnelling.txt
 ## Contact
 
 Wolf - 0x00w0lf@proton.me
-Project Link: [https://github.com/0x00wolf/hkrai](https://github.com/0x00wolf/hkrai)
+Project Link: [https://github.com/0x00wolf/Hkrai](https://github.com/0x00wolf/Hkrai)
