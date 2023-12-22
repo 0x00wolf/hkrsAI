@@ -186,7 +186,7 @@ class PocketAI(ChatGPT):
         self.__gpt_set_tp(self.args.top_p)  # default=1, range=(0.1, 1)
         self.__gpt_set_mt(self.args.max_tokens)  # default=1000, max relative to GPT model, but typically 4096
         self.__gpt_set_ll(self.args.log_level)  # default=2, range=(1, 2)
-        self.__gpt_set_lf(self.args.log_format)  # defaul='json', options=['json', 'txt']
+        self.__gpt_set_lf(self.args.log_format)  # default='json', options=['json', 'txt']
         # todo: self.stop_sequence = args.stop  # default: None
         # todo: self.stream = args.args.stream
         # todo: self.logit_bias = args.logit_bias
@@ -197,7 +197,7 @@ class PocketAI(ChatGPT):
             if model == new_value:
                 self.model = new_value
                 return
-        self._ _gpt_runtime_error(variables.bad_model, new_value)
+        self.__gpt_runtime_error(variables.bad_model, new_value)
         self.model = ChatGPT().model
 
     def __gpt_set_temp(self, new_value):
@@ -536,7 +536,7 @@ class PocketAI(ChatGPT):
             arguments = self.user_input.split(' ')
             try:
                 if arguments[1] == 'model':
-                    self.__gpt_set_model(value)
+                    self.__gpt_set_model(arguments[2])
                 elif arguments[1] == 'temperature':
                     value = float(arguments[2])
                     self.__gpt_set_temp(value)
@@ -557,7 +557,6 @@ class PocketAI(ChatGPT):
                     self.__gpt_set_n(value)
                 else:
                     raise TypeError
-                    return
                 print(f'[-] {arguments[1]}: {self.temperature}\n')
             except TypeError:
                 print(f'[*] invalid type or value for {arguments[1]}\n[-] resetting to default')
