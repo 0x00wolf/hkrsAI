@@ -53,7 +53,7 @@ To view detailed information about hkrAI's runtime parameters in the terminal, y
 ./hkrai.py -h
 ```
 
-Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see:[OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
+Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see the: [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
 
 Example runtime arguments:
 
