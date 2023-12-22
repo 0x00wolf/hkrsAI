@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 # HkrAI
 
-##the keep it simple approach to integrating the world's most power AI into your Linux terminal.
+## The keep it simple approach to integrating the world's most power AI into your Linux terminal.
 
 In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily.
 
