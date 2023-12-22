@@ -85,7 +85,6 @@ info:
 
 **>start**  
 
-usage:
 ```
 >start
 ```
@@ -99,7 +98,6 @@ info:
 
 **>exec**
 
-usage: 
 ```
 >exec {system_command} {args[1:]}
 >exec ls -l
@@ -117,7 +115,6 @@ info:
 
 **>insert**  
 
-usage: 
 ```
 >insert  /path/to/file.extension
 >insert ./filename.extension
@@ -129,7 +126,6 @@ info:
 
 **>reset**
 
-usage: 
 ```
 >reset
 ```       
@@ -142,7 +138,6 @@ API the user is still able to save the previous response, which will be replaced
 
 **>show**
 
-usage: 
 ```
 >show
 >show temperature
@@ -162,7 +157,6 @@ info:
 
 **>flush**
 
-usage: 
 ```
 >flush
 ```                    
@@ -172,7 +166,6 @@ info:
 
 **>save**
 
-usage: 
 ```
 >save code
 >save code /path/to/savefile.extension
@@ -187,8 +180,7 @@ info:
 ----
 
 **>exit**
-
-usage: 
+ 
 ```
 >exit
 ```                     
