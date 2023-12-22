@@ -9,7 +9,7 @@ In the principle of KISS (not the band), I wanted a tool that integrated seamles
 
 HkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (AwesomeChatGPTFonts), which can be selected via a convenient menu system at anytime within the program.
 
-I built HkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+I built hkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 ---
 <!-- GETTING STARTED -->
@@ -38,7 +38,7 @@ HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
 ---
 ### First Runtime
 
-The first time you run HkrAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, HkrAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
+The first time you run hkrAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, hkrAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
 
 Logfiles will be saved in the logs folder in the parent directory. This will also be generated on the first runtime.
 
@@ -47,10 +47,10 @@ Logfiles will be saved in the logs folder in the parent directory. This will als
 
 The command line arguments include each of the GPT API's parameters, as well as logging-level, log format, and system prompt.
 
-To view detailed information about HkrAI's runtime parameters in the terminal, you can input:
+To view detailed information about hkrAI's runtime parameters in the terminal, you can input:
 
 ```python
-./Hkrai.py -h
+./hkrai.py -h
 ```
 
 Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see: [OpenAI's Docs](https://openai.com
@@ -59,127 +59,149 @@ _For more examples, please refer to the [OpenAI API Documentation](https://platf
 Example runtime arguments:
 
 ```bash
-./Hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
+./hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
 ```
 ---
 ### Context Management Commands
 
 **>stop**
-[*] usage: 
 
 ```
 >stop
 ```
+
 info:
-  - Sets the pocketAI class variable freeze to True, allowing for copying and pasting to the terminal.
+  - Sets the pocketAI class variable freeze=True, allowing the user to stack a query with multiple inputs.
+  - When freeze=True, you can copy+paste code to the hkrAI's Python shell. You can also
   - Allows the user to build a query from a series of inputs, with each input parsed for state commands.
   - Users can insert the contents of a file into their query, while freeze=True with the '>insert' command (see below).
 ---
 
-[*] command:\t'>start'  
-[*] usage: >">start"
-[-] info:
-- Sets freeze to False. 
-- Hit enter when the prompt returns to submit the query to the GPT API.
-- Note that some commands only work when freeze is True.
-[-] example:
+**>start**  
+
+usage:
+```
 >start
+```
 
-----
+info:
+   - Sets freeze=False. 
+   - Hit enter when the prompt returns to submit the query to the GPT API.
+   - Note that some commands only work when freeze=True (copy+pasting and >insert).
+---
 
-[*] command:\t'>exec'  
-[-] usage: >">exec {system_command} {args[1:]}"
-[-] info:
-- Allows the user to execute system commands within pocketAI's shell.
-- Any additional arguments in the input will be executed as a system commands.
-- Note that the program runs in a Python shell, which technically doesn't have access to the 'cd' command,
-but 'cd' has been included thanks to a little hack.
-- The primary function of being able to execute system commands is directory traversal and organizing files.
-[-]examples:
->exec cd ./path  
->exec cd /root/path'       
->exec cd home  # jumps to pocketAI's root directory.          
+
+**>exec**
+
+usage: 
+```
+>exec {system_command} {args[1:]}
 >exec ls -l
->exec mkdir ./dir_name 
+>exec cd ../
+>exec pwd
+>exec cat /pathto/file.extension
+```
+info:
+   - Allows the user to execute system commands within pocketAI's shell.
+   - Any additional arguments in the input will be executed as a system commands.
+   - Note that the program runs in a Python shell, which technically doesn't have access to the 'cd' command,
+      but 'cd' and 'cat' have been included with a little hack.
+   - The primary function of being able to execute system commands is directory traversal and organizing files.
+---
 
-----
+**>insert**  
 
-[*] command:\t'>stop'  
-[*] usage: >">stop"
-[-] info:
-- Sets the pocketAI class variable freeze to True, allowing for copying and pasting to the terminal
-- Allows the user to build a query from a series of inputs, with each input parsed for state commands
-- Users can insert the contents of a file into their query, while freeze=True with the '>insert' command (see below)
+usage: 
+```
+>insert  /path/to/file.extension
+>insert ./filename.extension
+```
+info:
+   - Fetches the contents of a file and appends it to the query.
+   - Requires freeze=True.
+---
 
-----
+**>reset**
 
-[*] command:\t>insert'  
-[*] usage: >">insert  /path/to/file.extension"
-[-] info:
-- Fetches the contents of a file and appends it to the query.
-- Requires freeze=True.
-[-] example:
->insert /home/user/Projects/CurrentProject/what_im_working_on.py
->insert ./code_for_query.c
-
-----
-
-[*] command:\t'>reset'             
-[*] usage: >">reset"       
-[-] info:
+usage: 
+```
+>reset
+```       
+info:
 - Resets the system prompt, generates a new log, and initiates a new chat session.
-- Note: This command will clear the current query, and messages. Before a new command is sent to the GPT
+- Note: This command will also clear the current query, and messages. Before a new command is sent to the GPT
 API the user is still able to save the previous response, which will be replaced with the response from the API.
 
+---
+
+**>show**
+
+usage: 
+```
+>show
+>show temperature
+>show gpt
+>show vars
+>show query
+>show response
+>show tokens
+```
+
+info:
+   - By default, inputting '>show' or '>print' will print the contents of the current query saved in memory. 
+   - By adding an additional arguments, pocketAI will display the values pertaining to that value.
+   - 'vars' prints all of the set values for ChatGPT's parameters.
+   - 'var' displays a specific parameter, which the user must specify.
+---
+
+**>flush**
+
+usage: 
+```
+>flush
+```                    
+info:
+   - Resets the query to ''.
+---
+
+**>save**
+
+usage: 
+```
+>save code
+>save code /path/to/savefile.extension
+>save response
+>save response ./path/filename.extensin
+>save reply
+```
+info:
+   - Allows the user to save the current response, messages, last reply, or extract and save code from the last reply.
+   - The reply and messages can be saved in either human readable text, or formatted JSON output. 
+   - To select a format, append the appropriate suffix to the file path argument.
 ----
 
-[*] command:\t'>show' or 'print''  
-[*] usage: >">show ( 'query' | 'response' | 'tokens' | 'system' | 'vars' | 'var {GPT parameter}')"
-[-] info:
-- By default, inputting '>show' or '>print' will print the contents of the current query saved in memory. 
-- By adding an additional arguments, pocketAI will display the values pertaining to that value.
-- 'vars' prints all of the set values for ChatGPT's parameters.
-- 'var' displays a specific parameter, which the user must specify.
-[-] examples:
->show tokens                        # display the number of tokens expended
->show var top_n                   # display the current temperature setting
->show system                       # display the system prompt
+**>exit**
 
+usage: 
+```
+>exit
+```                     
+info:
+   - Quit the program.
 ----
 
-[*] command:\t'>flush' 
-[*] usage: >">flush"                    
-[-] info:
-- Resets the query to ''.
-
-----
-
-[*] command:\t'>save'  
-[*] usage: >">save  ('code' | 'response' | 'reply' | 'messages')  /output_path/filename"                        
-[-] info:
-- Allows the user to save the current response, messages, last reply, or extract and save code from the last reply.
-- The reply and messages can be saved in either human readable text, or formatted JSON output. 
-- To select a format, append the appropriate suffix to the file path argument.
-[-] examples:
-save code ./file_in_current_dir.py
-save code /absolute/path/to/file.js
-save reply ./dns_tunnelling.txt
-
-----
-
-[*] command:\t'>exit'
-[*] usage: >">exit"                     
-[-] info:
-- Quit the program.
-"""
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Beta release
-- [ ] Beta tester bug hunt *in progress
+- [x] Beta tester bug hunt *in progress
 - [ ] Add Additional features and integration based on user feedback
+- [ ] Another one (next project time)
 
 ## Contact
 
+If you have features, suggestions, or bugs, feel free to reach out to this email address. Please note that my last project was ransomware that was 8x faster than Conti's. Resist the urge to send phishing emails to me. 
+
+This email is for projects only!
 Wolf - 0x00w0lf@proton.me
-Project Link: [https://github.com/0x00wolf/Hkrai](https://github.com/0x00wolf/Hkrai)
+Project Link: [https://github.com/0x00wolf/hkrai](https://github.com/0x00wolf/hkrai)
