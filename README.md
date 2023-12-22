@@ -3,7 +3,9 @@
 <!-- ABOUT THE PROJECT -->
 ## hkrAI - the keep it simple approach to integrating the world's most power AI into your Linux terminal.
 
-There are a lot of options for propeitary software to take advantage of integrating ChatGPT into your workflow, most of them include telemetry and are GUI based. In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily. After 8 solid days of coding, I ended up with a program that integrated all the features that I wanted: hkrAI!
+There are a lot of options for propeitary software to take advantage of integrating ChatGPT into your workflow. Although, most of them include telemetry and are packaged in a GUI. 
+
+In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily. After 8 solid days of coding, I ended up with a program that integrated all the features that I wanted: hkrAI!
 
 hkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AI's for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (AwesomeChatGPTFonts), which can be selected via a convenient menu system at anytime within the program.
 
