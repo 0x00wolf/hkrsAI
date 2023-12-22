@@ -10,6 +10,7 @@ In the principle of KISS (not the band), I wanted a tool that integrated seamles
 HkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (AwesomeChatGPTFonts), which can be selected via a convenient menu system at anytime within the program.
 
 I built HkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+
 ---
 <!-- GETTING STARTED -->
 ### Getting started:
