@@ -62,6 +62,14 @@ Example runtime arguments:
 ./hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
 ```
 ---
+
+### System Prompts
+
+System prompts are one of the most powerful tools you can use when interacting with ChatGPT. In a nutshell, system prompts allow you to define the scope of knowledge of your AI assistant, it's personality, and it's format for responses.
+
+To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts all you have to do is place a text file with your desired prompt in the category of your choosing. The next time you set the system prompt in hkrAI your new prompt will be waiting for you.
+
+Fantastic 
 ### Context Management Commands
 
 **>stop**
