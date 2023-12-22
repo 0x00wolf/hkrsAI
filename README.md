@@ -45,7 +45,7 @@ Logfiles will be saved in the logs folder in the parent directory. This will als
 ---
 ### Command Line Arguments
 
-The command line arguments include each of the GPT API's parameters, as well as logging-level, log format, and system prompt.
+The command line arguments include each GPT's API parameters, as well as logging-level, log format, and system prompt.
 
 To view detailed information about hkrAI's runtime parameters in the terminal, you can input:
 
@@ -53,8 +53,7 @@ To view detailed information about hkrAI's runtime parameters in the terminal, y
 ./hkrai.py -h
 ```
 
-Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see: [OpenAI's Docs](https://openai.com
-_For more examples, please refer to the [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
+Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see:[OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
 
 Example runtime arguments:
 
@@ -69,7 +68,6 @@ System prompts are one of the most powerful tools you can use when interacting w
 
 To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts all you have to do is place a text file with your desired prompt in the category of your choosing. The next time you set the system prompt in hkrAI your new prompt will be waiting for you.
 
-Fantastic 
 ### Context Management Commands
 
 **>stop**
