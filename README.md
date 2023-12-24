@@ -1,21 +1,21 @@
 
 
 <!-- ABOUT THE PROJECT -->
-# **hkrAI**
+# **hkrsAI**
 
 ## The keep it simple approach to integrating the world's most powerful AI into your Linux terminal.
 
 In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily.
 
-HkrAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (thanks to https://github.com/f/awesome-chatgpt-prompts), which can be selected via a convenient menu system at anytime within the program.
+hkrsAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (thanks to https://github.com/f/awesome-chatgpt-prompts), which can be selected via a convenient menu system at anytime within the program.
 
-I built hkrAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 ---
 <!-- GETTING STARTED -->
 ### Getting started:
 
-HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
+hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
 **Steps to install:**
 
@@ -30,7 +30,7 @@ HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
    ```
 4. Run the program
    ```Python
-   ./hkrai.py 
+   ./hkrsai.py 
    ```
 5. Input your API when prompted.
 6. Select a premad system prompt or input your own.
@@ -38,7 +38,7 @@ HkrAI uses one non-standard Python Library, the OpenAI lib: [https://platform.op
 ---
 ### First Runtime
 
-The first time you run hkrAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, hkrAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
+The first time you run hkrsAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, hkrsAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
 
 Logfiles will be saved in the logs folder in the parent directory. This will also be generated on the first runtime.
 
@@ -47,10 +47,10 @@ Logfiles will be saved in the logs folder in the parent directory. This will als
 
 The command line arguments include each GPT's API parameters, as well as logging-level, log format, and system prompt.
 
-To view detailed information about hkrAI's runtime parameters in the terminal, you can input:
+To view detailed information about hkrsAI's runtime parameters in the terminal, you can input:
 
 ```python
-./hkrai.py -h
+./hkrsai.py -h
 ```
 
 Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see the: [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
@@ -58,7 +58,7 @@ Although you can find detailed information in the help strings on each of the pa
 Example runtime arguments:
 
 ```bash
-./hkrai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
+./hkrsai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
 ```
 ---
 
@@ -66,7 +66,7 @@ Example runtime arguments:
 
 System prompts are one of the most powerful tools you can use when interacting with ChatGPT. In a nutshell, system prompts allow you to define the scope of knowledge of your AI assistant, it's personality, and it's format for responses.
 
-To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts all you have to do is place a text file with your desired prompt in the category of your choosing. The next time you set the system prompt in hkrAI your new prompt will be waiting for you.
+To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts all you have to do is place a text file with your desired prompt in the category of your choosing. The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
 
 ### Context Management Commands
 
@@ -78,7 +78,7 @@ To edit the premade prompts (highly suggested as some contain generic first ques
 
 info:
   - Sets the pocketAI class variable freeze=True, allowing the user to stack a query with multiple inputs.
-  - When freeze=True, you can copy+paste code to the hkrAI's Python shell. You can also
+  - When freeze=True, you can copy+paste code to the hkrsAI's Python shell. You can also
   - Allows the user to build a query from a series of inputs, with each input parsed for state commands.
   - Users can insert the contents of a file into their query, while freeze=True with the '>insert' command (see below).
 ---
@@ -202,4 +202,4 @@ If you have features, suggestions, or bugs, feel free to reach out to this email
 
 This email is for projects only!
 Wolf - 0x00w0lf@proton.me
-Project Link: [https://github.com/0x00wolf/hkrai](https://github.com/0x00wolf/hkrai)
+Project Link: [https://github.com/0x00wolf/hkrsai](https://github.com/0x00wolf/hkrsai)
