@@ -13,20 +13,21 @@ import json
 
 class ChatGPT:
     """An immutable class wrapper for the ChatGPT API with values set to their defaults."""
-    client = None  # client = openai.OpenAI(api_key="<INSERT_API_KEY")
-    model = 'gpt-3.5-turbo'
-    temperature = 0.7
-    frequency_penalty = 0.0
-    presence_penalty = 0.0
-    top_p = 1.0
-    n = 1
-    max_tokens = 1000
-    # todo: logprobs, logitbias, tools, stream, stop
-    messages = []
-    api_key = ''
-    query = ''
-    reply = ''
-    response = None
+    def __init__(self):
+        self.client = None  # client = openai.OpenAI(api_key="<INSERT_API_KEY")
+        self.model = 'gpt-3.5-turbo'
+        self.temperature = 0.7
+        self.frequency_penalty = 0.0
+        self.presence_penalty = 0.0
+        self.top_p = 1.0
+        self.n = 1
+        self.max_tokens = 1000
+        # todo: logprobs, logitbias, tools, stream, stop
+        self.messages = []
+        self.api_key = ''
+        self.query = ''
+        self.reply = ''
+        self.response = None
 
     def set_chat(self):
         """Formats the system prompt into a JSON object for the GPT API"""
@@ -63,16 +64,15 @@ class ChatGPT:
 
 class PocketAI(ChatGPT):
     """ChatGPT child class that manages all the aspects of runtime and state"""
-    user_input = ''
-    system_prompt_name = ''
-    system_prompt = ''
-    log_file = ''
-    save_file = ''
-    log_number = 0
-    save_number = 1
-
     def __init__(self, args):
         super().__init__()
+        self.user_input = ''
+        self.system_prompt_name = ''
+        self.system_prompt = ''
+        self.log_file = ''
+        self.save_file = ''
+        self.log_number = 0
+        self.save_number = 1
         self.args = args
         self.freeze = False
         self.log_format = args.log_format  # default='json', options: ['json', 'txt', 'md'], to learn more=README.md
@@ -173,7 +173,7 @@ class PocketAI(ChatGPT):
                 return
             else:
                 pass
-
+# MODEL STATE CONTROLLER
     def gpt_set_params(self):
         """Set the user input runtime parameters for the GPT API, and confirm that they are
         withing acceptable parameters. The functions employed within gpt_set_params verify
@@ -362,7 +362,7 @@ class PocketAI(ChatGPT):
     def get_input(self):
         """Implements a finite state machine, via parsing user input, to manipulate the program during runtime"""
         while True:
-            self.user_input = input('>')
+            self.user_input = input('>') # INSTEAD OF MAKING A MEMBER MAKE IT A PARAMETER
             if self.user_input.startswith('>'):
                 self.__cmd_parse()
             elif not self.freeze:
@@ -560,12 +560,6 @@ class PocketAI(ChatGPT):
                 print(f'[-] {arguments[1]}: {self.temperature}\n')
             except TypeError:
                 print(f'[*] invalid type or value for {arguments[1]}\n[-] resetting to default')
-
-    def __set_to_default(self,):
-        for key, value in self.__dict__.items():
-            if key == parameter and value != getattr(ChatGPT, attr):
-                setattr(self, parameter, getattr(ChatGPT, parameter))
-                print('works')
 
     # logging:
 
