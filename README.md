@@ -14,11 +14,10 @@
 <p align="center">
 
 ## Description:
-   
-</p>
-<p align="center">
+
    
 **Version 2 is out!**
+
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
 
@@ -29,7 +28,7 @@ Version 2 is thanks to guidance (code reviews) that I received from a dear frien
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 ---
-<p align="center">
+
    
 # Index
 
@@ -69,28 +68,35 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 7. To view context management commands input '>help', after an AI assistant has been defined.
 
 ---
+
 ## At Runtime
 
 At the beginning of each runtime, hkrsAI will check to see if the JSON config file and a logs directory are present in the program's parent directory. The config file tracks the current log number, and stores the user's API key for communicating with ChatGPT. If either the logs folder or config.json are missing the program will generate them. HkrsAI then checks for a stored API key. If none is found, it prompts you to input a new key. Everytime a new key is input, or the API key is retrieved from the config.json, hkrsAI will verify the key is valid with the OpenAI API. 
 
 ---
+
 ## Command Line Arguments
 
 HkrsAI parses for a number of command-line arguments. The user is able to to set each of GPTs parameters, as well as logging-level, log format, and a path to a pre-made system prompt.
 
 To view detailed information, use:
 
+
 ```python
 ./hkrsai.py -h
 ```
+
 
 For detailed information on the each of GPTs parameters, please see the: [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
 
 Example runtime arguments:
 
+
 ```bash
 ./hkrsai.py -sp ./prompts/fun/yoda -m gpt-4 --temperature 1.2 --max-tokens 200 --log-format txt
 ```
+
+
 ---
 
 ## System Prompts
@@ -102,6 +108,7 @@ At the beginning of runtime, if no prompt was supplied via the command-line argu
 To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts, place an extensionless text file in the folder best representing your prompt's category.The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
 
 ---
+
 ## Logging
 
 By default, hkrsAI will log the messages generated back and forth to ChatGPT. The messages are stored in the Conversation class messages class instance variable. Controlling the log level can be done with the log level command line argument (see below). The default level is 2, which saves the messages as decribed. Alternatively, you can select log level 1, which will export the entire response object into the log file as a string variable whenever a function makes a call to the Logger class log() method. 
@@ -121,7 +128,9 @@ I built this program for myself, as a tool that I wanted. Each feature was creat
 The program's context management commands are designed specifically to enable integrating ChatGPT into the workflow of programmers and pentesters. 
 
 ---
+
 **command: >stop** 
+
 ```
 >stop
 ```
@@ -132,7 +141,9 @@ from X inputs. While thinking=True, the user is able to copy+paste to the progra
 shell, as well as use the '>insert' command (see below).
 
 ---
+
 **command: >flush** 
+
 ```
 >flush
 ```
@@ -141,7 +152,9 @@ shell, as well as use the '>insert' command (see below).
 clause.
 
 ---
+
 **command: >insert** 
+
 ```
 >insert
 >insert /absolute/path/filename.extension
@@ -151,7 +164,9 @@ clause.
 **info:** When thinking=True, '>insert' fetches the contents of a file and appends it to the query. Primarily a feature for developers to easily import code from their projects into the program, or to enable more advanced scripting capabilities.
 
 ---
+
 **command: >start** 
+
 ```
 >start
 ```
@@ -160,7 +175,9 @@ clause.
 resuming the conversation.
 
 ---
+
 **command: >exec** 
+
 ```
 >exec
 >exec {system command} {args}
@@ -169,10 +186,13 @@ resuming the conversation.
 >exec ls -l
 >exec cat ./filepath/filename.extension     # fetches and prints the contents of a file
 ```
+
 **info:** You can execute system-wide commands from within the program's Python shell. Note that 'cd', and 'cat' are hacked in. Many Linux programs will fail to execute. Primarily included to enable easy directory traversal for workflow integration.
 
 ---
+
 **command: >save** 
+
 ```
 >save
 >save  # saves the AIs last reply to a generic save file
@@ -184,10 +204,13 @@ resuming the conversation.
 >save messages {None | /path/filename.extension}
 >save prompt /path/to/prompts/dir/promptname
 ```
+
 **info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
 
 ---
+
 **command: >set** 
+
 ```
 >set gpt {parameter} {value}
 >set logger {level | format} 
@@ -195,10 +218,13 @@ resuming the conversation.
 >set {level} {value}  # levels: (1, 2)
 >set {format} {value}  # format: ['json', 'txt']
 ```
+
 **info:** Changes the value with the associated parameter.
 
 ---
+
 **command: >show** 
+
 ```
 >show
 >show  # prints the value stored in conversation.query
@@ -207,26 +233,33 @@ resuming the conversation.
 >show  # prints the values stored in gpt and logger
 >show gpt  # prints the values stored in gpt
 ```
+
 **info:** Prints stored values to the console.
 
 ---
+
 **command: >reset** 
+
 ```
 >reset
 >reset  # resets the AI assistant 
 >reset conversation  # also resets the AI assistant
 >reset log  # starts a new log file and maintains conversation
 ```
+
 **info:** Allows the user to reset the conversation or start a new log.
 
 ---
+
 **command: >exit** 
+
 ```
 >exit
 ```
 
 **info:** Quit the program.
 
+---
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -235,6 +268,8 @@ resuming the conversation.
 - [x] V2 - Beta tester bughunt *in prograss
 - [ ] Add Additional features and integration based on user feedback
 - [ ] Another one (next project time)
+
+---
 
 ## Contact
 
