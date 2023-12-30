@@ -132,4 +132,4 @@ class Logger:
         """Dumps a JSON object to a file"""
         with open(json_file, 'w') as f:
             json.dump(json_dict, f, indent=6)
-            
+
