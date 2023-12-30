@@ -74,7 +74,7 @@ To edit the premade prompts (highly suggested as some contain generic first ques
 
 ### Context Management Commands
 
-**The program's context management commands are designed specifically to enable integrating ChatGPT into my workflow - programming and pentesting. Code extraction, code insertion, directory traversal, porting code to my IDE from GPT & vice versa.**
+The program's context management commands are designed specifically to enable integrating ChatGPT into the workflow of programmers and pentesters. 
 
 ---
 **command: >stop** 
