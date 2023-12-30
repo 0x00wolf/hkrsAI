@@ -19,7 +19,7 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 # Index
 
-[Getting-Started][Getting-Started]
+Getting Started[Getting-Started]
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 <!-- GETTING STARTED -->
 ## Getting Started:
