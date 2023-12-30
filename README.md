@@ -193,7 +193,7 @@ resuming the conversation.
 **info:** Prints stored values to the console.
 
 ---
-**command:** 
+**command: >reset** 
 ```
 >reset
 >reset  # resets the AI assistant
