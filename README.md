@@ -5,11 +5,13 @@
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/banner.jpg)
 Version 2 is out!
 
-## The keep it simple approach to integrating the world's most powerful AI into your Linux terminal.
+## The keep it simple approach to integrate ChatGPT into your Linux terminal.
 
-In the principle of KISS (not the band), I wanted a tool that integrated seamlessly into my development workflow, but streamlined enough to fit nicely into a single Python file (with a second to contain long string variables). I wanted to be able to copy+paste, insert files with a single command, execute system wide commands for directory traversal, have automatic logging in case I wanted to come back to something, but didn't remember to save it, and the ability to extract code easily.
+HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
 
-hkrsAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github (thanks to https://github.com/f/awesome-chatgpt-prompts), which can be selected via a convenient menu system at anytime within the program.
+hkrsAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github. You can set a custom prompt, or select from pre-made fonts from a convenient menu. You can reset the conversation at any time, and input a new font. The program is also scriptable, and command-line arguments can control any of the API parameters at runtime.
+
+Version 2 is thanks to guidance (code reviews) that I received from a dear friend with a PHD in Computer Science and a decade of career experience working as a ML scientist at DeepMind. Thanks to his guidance the code is much more portable. You can easily extend HkrsAI by adding a new function to the Dispatcher class (with a matching signature), and adding its name to the command-list in the Parser class.
 
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
