@@ -17,7 +17,7 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 ---
 <!-- GETTING STARTED -->
-### Getting started:
+## Getting started:
 
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
@@ -40,12 +40,12 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 6. Define a custom system prompt, or select a pre-made prompt from 100's of premade options.
 7. To view context management commands input '>help', after an AI assistant has been defined.
 ---
-### First Runtime
+## At Runtime
 
 At the beginning of each runtime, hkrsAI will check to see if the JSON config file and a logs directory are present in the program's parent directory. The config file tracks the current log number, and stores the user's API key for communicating with ChatGPT. If either the logs folder or config.json are missing the program will generate them. HkrsAI then checks for a stored API key. If none is found, it prompts you to input a new key. Everytime a new key is input, or the API key is retrieved from the config.json, hkrsAI will verify the key is valid with the OpenAI API. 
 
 ---
-### Command Line Arguments
+## Command Line Arguments
 
 HkrsAI parses for a number of command-line arguments. The user is able to to set each of GPTs parameters, as well as logging-level, log format, and a path to a pre-made system prompt.
 
@@ -64,13 +64,18 @@ Example runtime arguments:
 ```
 ---
 
-### System Prompts
+## System Prompts
 
 System prompts are one of the most powerful tools you can use when interacting with ChatGPT. In a nutshell, system prompts allow you to define your AI's perosna, scope of knowledge, and format for output.
 
 At the beginning of runtime, if no prompt was supplied via the command-line arguments, the user will be prompted to input a custom prompt, or hit 'enter' to select from the premade system prompts already built-in to the program. The pre-made system prompts were primarily ported from the Github repo, [Awesome-ChatGPT-Prompts](https://github.com/f/awesome-chatgpt-prompts), with an impressive 95,000 stars.
 
 To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts, place an extensionless text file in the folder best representing your prompt's category.The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
+
+---
+## Logging
+
+By default, hkrsAI will log the messages generated back and forth to ChatGPT.
 
 ### Context Management Commands
 
