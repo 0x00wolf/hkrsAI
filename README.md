@@ -1,13 +1,11 @@
-<p align="center">
 <!-- ABOUT THE PROJECT -->
 
 # HkrsAI.v2
 
-</p>
-
 ---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
-<sub>image by the author</sub>
+
+<p align="center"><sub>image by the author</sub></p>
 
 ---
 <p align="center">
