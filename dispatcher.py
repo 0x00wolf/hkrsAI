@@ -1,4 +1,5 @@
 from typing import Type
+from openai import *
 from inputparser import InputParser
 from action import Action
 from gpt import GPT
@@ -74,6 +75,8 @@ class Dispatcher:
                 conversation = conversation.speak(content=f'{conversation.query}\n{action.raw_input}')
             conversation = conversation.listen(gpt=gpt)
             logger = logger.log(conversation)
+        except openai.BadRequestError as e:
+            print(f'[*] ')
         except openai.APIError as e:
             # Handle API error here, e.g. retry or log
             print(f"[*] OpenAI API returned an API Error: {e}")
@@ -127,7 +130,13 @@ class Dispatcher:
     @staticmethod
     def save(gpt: GPT, conversation: Conversation, action: Action, logger: Logger):
         """Extract and save code, the reply, or the response object to an absolute, relative, or generic path"""
-        logger.save(arguments=action.arguments, conversation=conversation)
+        try:
+            if action.arguments[0] == 'prompt' and len(action.arguments) == 2:
+                with open(self.arguments[1], 'w') as f:
+                    f.write(conversation.messages[0]['content'])
+            logger.save(arguments=action.arguments, conversation=conversation)
+        except FileNotFoundError:
+            print(f'[*] error saving data')
         return gpt, conversation, logger
 
     # >set
