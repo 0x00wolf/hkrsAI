@@ -1,7 +1,9 @@
 
 
 <!-- ABOUT THE PROJECT -->
-# **hkrsAI**
+# **hkrsAI.v2**
+
+Version 2 is out!
 
 ## The keep it simple approach to integrating the world's most powerful AI into your Linux terminal.
 
