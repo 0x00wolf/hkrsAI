@@ -129,31 +129,33 @@ The program's context management commands are designed specifically to enable in
 
 ---
 
-**command: >stop** 
-
-```
->stop
-```
+**>stop** 
 
 **info:** Sets thinking=True, halting messages being sent to GPT. While thinking=True, \
 new inputs are appended to the query with a '\n', allowing the user to create a stacked query \
 from X inputs. While thinking=True, the user is able to copy+paste to the program's Python \
 shell, as well as use the '>insert' command (see below).
 
+```
+>stop
+```
+
 ---
 
-**command: >flush** 
+**>flush** 
+
+**info:** While thinking=True, clears the value stored in the query. Aka, the fat fingers insurance 
+clause.
 
 ```
 >flush
 ```
 
-**info:** While thinking=True, clears the value stored in the query. Aka, the fat fingers insurance 
-clause.
-
 ---
 
-**command: >insert** 
+**>insert** 
+
+**info:** When thinking=True, '>insert' fetches the contents of a file and appends it to the query. Primarily a feature for developers to easily import code from their projects into the program, or to enable more advanced scripting capabilities.
 
 ```
 >insert
@@ -161,22 +163,22 @@ clause.
 >insert ./relative/path/filename.extension
 ```
 
-**info:** When thinking=True, '>insert' fetches the contents of a file and appends it to the query. Primarily a feature for developers to easily import code from their projects into the program, or to enable more advanced scripting capabilities.
-
 ---
 
-**command: >start** 
+**>start** 
+
+**info:** Set thinking=False. The next input will trigger sending the stored query to GPT, \
+resuming the conversation.
 
 ```
 >start
 ```
 
-**info:** Set thinking=False. The next input will trigger sending the stored query to GPT, \
-resuming the conversation.
-
 ---
 
-**command: >exec** 
+**>exec** 
+
+**info:** You can execute system-wide commands from within the program's Python shell. Note that 'cd', and 'cat' are hacked in. Many Linux programs will fail to execute. Primarily included to enable easy directory traversal for workflow integration.
 
 ```
 >exec
@@ -187,11 +189,11 @@ resuming the conversation.
 >exec cat ./filepath/filename.extension     # fetches and prints the contents of a file
 ```
 
-**info:** You can execute system-wide commands from within the program's Python shell. Note that 'cd', and 'cat' are hacked in. Many Linux programs will fail to execute. Primarily included to enable easy directory traversal for workflow integration.
-
 ---
 
-**command: >save** 
+**>save** 
+
+**info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
 
 ```
 >save
@@ -205,11 +207,11 @@ resuming the conversation.
 >save prompt /path/to/prompts/dir/promptname
 ```
 
-**info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
-
 ---
 
-**command: >set** 
+**>set** 
+
+**info:** Changes the value with the associated parameter.
 
 ```
 >set gpt {parameter} {value}
@@ -219,11 +221,11 @@ resuming the conversation.
 >set {format} {value}  # format: ['json', 'txt']
 ```
 
-**info:** Changes the value with the associated parameter.
-
 ---
 
-**command: >show** 
+**>show** 
+
+**info:** Prints stored values to the console.
 
 ```
 >show
@@ -234,11 +236,11 @@ resuming the conversation.
 >show gpt  # prints the values stored in gpt
 ```
 
-**info:** Prints stored values to the console.
-
 ---
 
-**command: >reset** 
+**>reset** 
+
+**info:** Allows the user to reset the conversation or start a new log.
 
 ```
 >reset
@@ -247,17 +249,15 @@ resuming the conversation.
 >reset log  # starts a new log file and maintains conversation
 ```
 
-**info:** Allows the user to reset the conversation or start a new log.
-
 ---
 
-**command: >exit** 
+**>exit** 
+
+**info:** Quit the program.
 
 ```
 >exit
 ```
-
-**info:** Quit the program.
 
 ---
 <!-- ROADMAP -->
