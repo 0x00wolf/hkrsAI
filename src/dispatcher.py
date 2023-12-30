@@ -1,5 +1,5 @@
 from typing import Type
-from openai import *
+import openai
 from src.inputparser import InputParser
 from src.action import Action
 from src.gpt import GPT
