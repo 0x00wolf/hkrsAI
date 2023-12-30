@@ -75,9 +75,19 @@ To edit the premade prompts (highly suggested as some contain generic first ques
 ---
 ## Logging
 
-By default, hkrsAI will log the messages generated back and forth to ChatGPT.
+By default, hkrsAI will log the messages generated back and forth to ChatGPT. The messages are stored in the Conversation class messages class instance variable. Controlling the log level can be done with the log level command line argument (see below). The default level is 2, which saves the messages as decribed. Alternatively, you can select log level 1, which will export the entire response object into the log file as a string variable whenever a function makes a call to the Logger class log() method. 
 
-### Context Management Commands
+The options for log format are 'txt' or 'json'. If 'txt' is selected, the logs will be saved as human readable text. 
+
+Both options can be set during runtime using the appropriate context management command.
+
+---
+
+## Workflow Integration
+
+I built this program for myself, as a tool that I wanted. Each feature was created to serve me use cases, which are primarily developing and penetration testing. You are able to extract code (provided the AI assistant presents it in code blocks: ```{code}```) to a relative or absolute location. You can execute system-wide commands for directory traversal, some of which don't work by default in the Python shell, like 'cd' and 'cat'. You can insert the contents of a file with a command, or copy+paste without sending unwanted requests to the GPT API (while thinking=True).
+
+## Context Management Commands
 
 The program's context management commands are designed specifically to enable integrating ChatGPT into the workflow of programmers and pentesters. 
 
