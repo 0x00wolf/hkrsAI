@@ -16,8 +16,13 @@ Version 2 is thanks to guidance (code reviews) that I received from a dear frien
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 ---
+
+# Index
+
+[Getting-Started][Getting-Started]
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
 <!-- GETTING STARTED -->
-## Getting started:
+## Getting Started:
 
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
