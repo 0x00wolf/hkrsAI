@@ -4,13 +4,14 @@
 </p>
 
 ---
-<p align="center">
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
 <sub>image by the author</sub>
-</p>
 
+---
 <p align="center">
 ## Description:
+</p>
+<p align="center">
 **Version 2 is out!**
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
