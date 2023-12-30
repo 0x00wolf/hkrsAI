@@ -39,9 +39,10 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
+
 **Installation**
 
-1. Get an API Key at [https://example.com](https://platform.openai.com/signup)](https://platform.openai.com/signup)
+1. Get an API Key at [https://platform.openai.com/signup](https://platform.openai.com/signup)](https://platform.openai.com/signup)
 2. Clone the repo
    ```sh
    git clone https://github.com/0x00wolf
@@ -119,6 +120,8 @@ Both options can be set during runtime using the appropriate context management 
 ## Workflow Integration
 
 I built this program for myself, as a tool that I wanted. Each feature was created to serve me use cases, which are primarily developing and penetration testing. You are able to extract code (provided the AI assistant presents it in code blocks: ```{code}```) to a relative or absolute location. You can execute system-wide commands for directory traversal, some of which don't work by default in the Python shell, like 'cd' and 'cat'. You can insert the contents of a file with a command, or copy+paste without sending unwanted requests to the GPT API (while thinking=True).
+
+---
 
 ## Context Management Commands
 
