@@ -34,167 +34,152 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
    ```Python
    ./hkrsai.py 
    ```
-5. Input your API when prompted.
-6. Select a premad system prompt or input your own.
-7. Once a system prompt has been entered, input '>' to view the context management commands manual (or see below).
+5. Input your API key when prompted (your key will be saved in the program's parent directory in config.json).
+6. Define a custom system prompt, or select a pre-made prompt from 100's of premade options.
+7. To view context management commands input '>help', after an AI assistant has been defined.
 ---
 ### First Runtime
 
-The first time you run hkrsAI it will generate JSON config file in the parent directory. The config file tracks log numbers, and stores the user's API key for communicating with ChatGPT. By default, hkrsAI will check for a key and prompt you to insert one if none is present. The program also verifies the validity of keys at boot up, or anyitme you initate a new chat session.
-
-Logfiles will be saved in the logs folder in the parent directory. This will also be generated on the first runtime.
+At the beginning of each runtime, hkrsAI will check to see if the JSON config file and a logs directory are present in the program's parent directory. The config file tracks the current log number, and stores the user's API key for communicating with ChatGPT. If either the logs folder or config.json are missing the program will generate them. HkrsAI then checks for a stored API key. If none is found, it prompts you to input a new key. Everytime a new key is input, or the API key is retrieved from the config.json, hkrsAI will verify the key is valid with the OpenAI API. 
 
 ---
 ### Command Line Arguments
 
-The command line arguments include each GPT's API parameters, as well as logging-level, log format, and system prompt.
+HkrsAI parses for a number of command-line arguments. The user is able to to set each of GPTs parameters, as well as logging-level, log format, and a path to a pre-made system prompt.
 
-To view detailed information about hkrsAI's runtime parameters in the terminal, you can input:
+To view detailed information, use:
 
 ```python
 ./hkrsai.py -h
 ```
 
-Although you can find detailed information in the help strings on each of the parameters and their functions, explaining their individual use case is beyond the scope of this README.md. Please see the: [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
+For detailed information on the each of GPTs parameters, please see the: [OpenAI API Documentation](https://platform.openai.com/docs/api-referen)
 
 Example runtime arguments:
 
 ```bash
-./hkrsai.py -sp ./prompts/fun/yoda --temperature 1.2 --max-tokens 200 --log-format txt
+./hkrsai.py -sp ./prompts/fun/yoda -m gpt-4 --temperature 1.2 --max-tokens 200 --log-format txt
 ```
 ---
 
 ### System Prompts
 
-System prompts are one of the most powerful tools you can use when interacting with ChatGPT. In a nutshell, system prompts allow you to define the scope of knowledge of your AI assistant, it's personality, and it's format for responses.
+System prompts are one of the most powerful tools you can use when interacting with ChatGPT. In a nutshell, system prompts allow you to define your AI's perosna, scope of knowledge, and format for output.
 
-To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts all you have to do is place a text file with your desired prompt in the category of your choosing. The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
+At the beginning of runtime, if no prompt was supplied via the command-line arguments, the user will be prompted to input a custom prompt, or hit 'enter' to select from the premade system prompts already built-in to the program. The pre-made system prompts were primarily ported from the Github repo, [Awesome-ChatGPT-Prompts](https://github.com/f/awesome-chatgpt-prompts), with an impressive 95,000 stars.
+
+To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts, place an extensionless text file in the folder best representing your prompt's category.The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
 
 ### Context Management Commands
 
-**>stop**
+**The program's context management commands are designed specifically to enable integrating ChatGPT into my workflow - programming and pentesting. Code extraction, code insertion, directory traversal, porting code to my IDE from GPT & vice versa.**
 
-```
->stop
-```
-
-info:
-  - Sets the pocketAI class variable freeze=True, allowing the user to stack a query with multiple inputs.
-  - When freeze=True, you can copy+paste code to the hkrsAI's Python shell. You can also
-  - Allows the user to build a query from a series of inputs, with each input parsed for state commands.
-  - Users can insert the contents of a file into their query, while freeze=True with the '>insert' command (see below).
 ---
+**command:** 
+`>stop`
 
-**>start**  
+**info:** Sets thinking=True, halting messages being sent to GPT. While thinking=True, \
+new inputs are appended to the query with a '\n', allowing the user to create a stacked query \
+from X inputs. While thinking=True, the user is able to copy+paste to the program's Python \
+shell, as well as use the '>insert' command (see below).
 
-```
->start
-```
-
-info:
-   - Sets freeze=False. 
-   - Hit enter when the prompt returns to submit the query to the GPT API.
-   - Note that some commands only work when freeze=True (copy+pasting and >insert).
 ---
+**command:** 
+`>flush`
 
+**info:** While thinking=True, clears the value stored in the query. Aka, the fat fingers insurance 
+clause.
 
-**>exec**
-
+---
+**command:** 
 ```
->exec {system_command} {args[1:]}
+>insert
+>insert /absolute/path/filename.extension
+>insert ./relative/path/filename.extension
+```
+
+**info:** When thinking=True, '>insert' fetches the contents of a file and appends it to the query. Primarily a feature for developers to easily import code from their projects into the program, or to enable more advanced scripting capabilities.
+
+---
+**command:** 
+
+`>start`
+
+**info:** Set thinking=False. The next input will trigger sending the stored query to GPT, \
+resuming the conversation.
+
+---
+**command:** 
+```
+>exec
+>exec {system command} {args}
+>exec cd ./logs  # cd to relative or absolute file path
+>exec cd home  # returns to the hkrsAI parent directory
 >exec ls -l
->exec cd ../
->exec pwd
->exec cat /pathto/file.extension
+>exec cat ./filepath/filename.extension     # fetches and prints the contents of a file
 ```
-info:
-   - Allows the user to execute system commands within pocketAI's shell.
-   - Any additional arguments in the input will be executed as a system commands.
-   - Note that the program runs in a Python shell, which technically doesn't have access to the 'cd' command,
-      but 'cd' and 'cat' have been included with a little hack.
-   - The primary function of being able to execute system commands is directory traversal and organizing files.
----
-
-**>insert**  
-
-```
->insert  /path/to/file.extension
->insert ./filename.extension
-```
-info:
-   - Fetches the contents of a file and appends it to the query.
-   - Requires freeze=True.
----
-
-**>reset**
-
-```
->reset
-```       
-info:
-- Resets the system prompt, generates a new log, and initiates a new chat session.
-- Note: This command will also clear the current query, and messages. Before a new command is sent to the GPT
-API the user is still able to save the previous response, which will be replaced with the response from the API.
+**info:** You can execute system-wide commands from within the program's Python shell. Note that 'cd', and 'cat' are hacked in. Many Linux programs will fail to execute. Primarily included to enable easy directory traversal for workflow integration.
 
 ---
+**command:** 
+```
+>save
+>save  # saves the AIs last reply to a generic save file
+>save /path/filename.extension  # saves the AIs last reply to relative or absolute path
+>save code  # extracts code from the last reply and saves it to a generic save file
+>save code ./path/filename.extension  # extracts and saves code to a relative or absolute path
+>save reply {None | /path/filename.extension}
+>save response {None | /path/filename.extension}
+>save messages {None | /path/filename.extension}
+```
+**info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
 
-**>show**
+---
+**command:** 
+```
+>set
+>set gpt {parameter} {value}
+>set logger {level | format} 
+>set {gpt_parameter} {value}  # for more information see ./hkrsai.py -h
+>set {level} {value}  # levels: (1, 2)
+>set {format} {value}  # format: ['json', 'txt']
+```
+**info:** Changes the value with the associated parameter.
 
+---
+**command:** 
 ```
 >show
->show temperature
->show gpt
->show vars
->show query
->show response
->show tokens
+>show  # prints the value stored in conversation.query
+>show {conversation | gpt | logger } {key}
+>show {gpt parameter}  # prints the value for a specific gpt parameter
+>show  # prints the values stored in gpt and logger
+>show gpt  # prints the values stored in gpt
 ```
+**info:** Prints stored values to the console.
 
-info:
-   - By default, inputting '>show' or '>print' will print the contents of the current query saved in memory. 
-   - By adding an additional arguments, pocketAI will display the values pertaining to that value.
-   - 'vars' prints all of the set values for ChatGPT's parameters.
-   - 'var' displays a specific parameter, which the user must specify.
 ---
-
-**>flush**
-
+**command:** 
 ```
->flush
-```                    
-info:
-   - Resets the query to ''.
+>reset
+>reset  # resets the AI assistant
+>reset conversation  # resets the AI assistant
+>reset log  # starts a new log file
+```
+**info:** Allows the user to reset the conversation or start a new log.
+
 ---
+**command:** 
+`>exit`
 
-**>save**
-
-```
->save code
->save code /path/to/savefile.extension
->save response
->save response ./path/filename.extensin
->save reply
-```
-info:
-   - Allows the user to save the current response, messages, last reply, or extract and save code from the last reply.
-   - The reply and messages can be saved in either human readable text, or formatted JSON output. 
-   - To select a format, append the appropriate suffix to the file path argument.
-----
-
-**>exit**
- 
-```
->exit
-```                     
-info:
-   - Quit the program.
-----
+**info:** Quit the program.
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Beta release
-- [x] Beta tester bug hunt *in progress
+- [x] V1 - all features work (code is very ugly)
+- [x] V2 - all features work (code is hopefully a lot less ugly)
+- [x] V2 - Beta tester bughunt *in prograss
 - [ ] Add Additional features and integration based on user feedback
 - [ ] Another one (next project time)
 
