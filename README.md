@@ -1,6 +1,8 @@
 <p align="center">
 <!-- ABOUT THE PROJECT -->
-# **HkrsAI.v2**
+
+# HkrsAI.v2
+
 </p>
 
 ---
@@ -9,9 +11,12 @@
 
 ---
 <p align="center">
+
 ## Description:
+   
 </p>
 <p align="center">
+   
 **Version 2 is out!**
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
@@ -21,11 +26,15 @@ hkrsAI is modeled as a finite state machine, allowing you to perpetually engage 
 Version 2 is thanks to guidance (code reviews) that I received from a dear friend with a PHD in Computer Science and a decade of career experience working as a ML scientist at DeepMind. Thanks to his guidance the code is much more portable. You can easily extend HkrsAI by adding a new function to the Dispatcher class (with a matching signature), and adding its name to the command-list in the Parser class.
 
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+
 </p>
 
 ---
-
+<p align="center">
+   
 # Index
+
+</p>
 
 [Getting-Started](#Getting-Started)
 [At-Runtime](#At-Runtime)
@@ -36,13 +45,22 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 [Context-Management-Controls](#Context-Management-Controls)
 
 ----
+
+<p align="center">
+   
 <!-- GETTING STARTED -->
 ## Getting Started:
 
+</p>
+<p align=center>
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
+</p>
 
+<p align="center">
+   
 **Installation**
 
+</p>
 1. Get an API Key at [https://example.com](https://platform.openai.com/signup)](https://platform.openai.com/signup)
 2. Clone the repo
    ```sh
@@ -59,6 +77,7 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 5. Input your API key when prompted (your key will be saved in the program's parent directory in config.json).
 6. Define a custom system prompt, or select a pre-made prompt from 100's of premade options.
 7. To view context management commands input '>help', after an AI assistant has been defined.
+
 ---
 ## At Runtime
 
