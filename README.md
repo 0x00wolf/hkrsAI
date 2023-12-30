@@ -1,11 +1,15 @@
 <p align="center">
 <!-- ABOUT THE PROJECT -->
-# **hkrsAI.v2**
+# **HkrsAI.v2**
+</p>
 
 ---
+<p align="center">
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
 <sub>image by the author</sub>
+</p>
 
+<p align="center">
 ## Description:
 **Version 2 is out!**
 
@@ -16,6 +20,7 @@ hkrsAI is modeled as a finite state machine, allowing you to perpetually engage 
 Version 2 is thanks to guidance (code reviews) that I received from a dear friend with a PHD in Computer Science and a decade of career experience working as a ML scientist at DeepMind. Thanks to his guidance the code is much more portable. You can easily extend HkrsAI by adding a new function to the Dispatcher class (with a matching signature), and adding its name to the command-list in the Parser class.
 
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
+</p>
 
 ---
 
