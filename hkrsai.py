@@ -48,7 +48,7 @@ def main():
 
     while True:
         user_input = input('>')  # While True, take user input
-        action = parser.parse(user_input)  # Parser turns input into an Action.
+        action = parser.parse(user_input)  # Parser turns input into Action.
         function = dispatcher.dispatch(action)  # Dispatcher turns Actions into functions with the same signature
         gpt, conversation, logger = function(gpt, conversation, action=action, logger=logger)  # This is a Conversation
 
