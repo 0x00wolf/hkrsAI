@@ -75,7 +75,7 @@ To edit the premade prompts (highly suggested as some contain generic first ques
 **The program's context management commands are designed specifically to enable integrating ChatGPT into my workflow - programming and pentesting. Code extraction, code insertion, directory traversal, porting code to my IDE from GPT & vice versa.**
 
 ---
-**command:** 
+**command: >stop** 
 ```
 >stop
 ```
@@ -86,7 +86,7 @@ from X inputs. While thinking=True, the user is able to copy+paste to the progra
 shell, as well as use the '>insert' command (see below).
 
 ---
-**command:** 
+**command: >flush** 
 ```
 >flush
 ```
@@ -95,7 +95,7 @@ shell, as well as use the '>insert' command (see below).
 clause.
 
 ---
-**command:** 
+**command: >insert** 
 ```
 >insert
 >insert /absolute/path/filename.extension
@@ -105,7 +105,7 @@ clause.
 **info:** When thinking=True, '>insert' fetches the contents of a file and appends it to the query. Primarily a feature for developers to easily import code from their projects into the program, or to enable more advanced scripting capabilities.
 
 ---
-**command:** 
+**command: >start** 
 ```
 >start
 ```
@@ -114,7 +114,7 @@ clause.
 resuming the conversation.
 
 ---
-**command:** 
+**command: >exec** 
 ```
 >exec
 >exec {system command} {args}
@@ -126,7 +126,7 @@ resuming the conversation.
 **info:** You can execute system-wide commands from within the program's Python shell. Note that 'cd', and 'cat' are hacked in. Many Linux programs will fail to execute. Primarily included to enable easy directory traversal for workflow integration.
 
 ---
-**command:** 
+**command: >save** 
 ```
 >save
 >save  # saves the AIs last reply to a generic save file
@@ -140,9 +140,8 @@ resuming the conversation.
 **info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
 
 ---
-**command:** 
+**command: >set** 
 ```
->set
 >set gpt {parameter} {value}
 >set logger {level | format} 
 >set {gpt_parameter} {value}  # for more information see ./hkrsai.py -h
@@ -152,7 +151,7 @@ resuming the conversation.
 **info:** Changes the value with the associated parameter.
 
 ---
-**command:** 
+**command: >show** 
 ```
 >show
 >show  # prints the value stored in conversation.query
@@ -174,7 +173,7 @@ resuming the conversation.
 **info:** Allows the user to reset the conversation or start a new log.
 
 ---
-**command:** 
+**command: >exit** 
 ```
 >exit
 ```
