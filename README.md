@@ -121,7 +121,7 @@ The options for log format are 'txt' or 'json'. If 'txt' is selected, the logs w
 
 Both options can be set during runtime using the appropriate context management command.
 
-**The logs directory** will be generated as ./src/logs. Any >save commands made that do not specify a path will write the save-file to the logs directory. If the config.json gets deleted, the logger will check to see if a file exists before saving a log, and will increase the log number until no file exists. 
+**The logs directory** will be generated as ./src/logs. Any >save commands made that do not specify a path will write the save-file to the logs directory with a generic name. If the config.json file gets deleted, the logger will check to see if a file exists before saving a log, and in the case a file is found, will increment the log number until no file exists. 
 
 ---
 
@@ -271,7 +271,7 @@ resuming the conversation.
 
 - [x] V1 - all features work (code is very ugly)
 - [x] V2 - all features work (code is hopefully a lot less ugly)
-- [x] V2 - Beta tester bughunt *in prograss
+- [x] V2 - Beta tester bughunt *in progress
 - [ ] Add Additional features and integration based on user feedback
 - [ ] Another one (next project time)
 
