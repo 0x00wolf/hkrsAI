@@ -3,6 +3,8 @@
 <!-- ABOUT THE PROJECT -->
 # **hkrsAI.v2**
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
+
+## Description:
 **Version 2 is out!**
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
