@@ -1,5 +1,4 @@
-
-
+<center>
 <!-- ABOUT THE PROJECT -->
 # **hkrsAI.v2**
 ---
@@ -228,3 +227,4 @@ If you have features, suggestions, or bugs, feel free to reach out to this email
 This email is for projects only!
 Wolf - 0x00w0lf@proton.me
 Project Link: [https://github.com/0x00wolf/hkrsai](https://github.com/0x00wolf/hkrsai)
+</center>
