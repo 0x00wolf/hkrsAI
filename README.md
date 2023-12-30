@@ -1,6 +1,7 @@
-<center>
+<p align="center">
 <!-- ABOUT THE PROJECT -->
 # **hkrsAI.v2**
+
 ---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
 <sub>image by the author</sub>
@@ -226,5 +227,7 @@ If you have features, suggestions, or bugs, feel free to reach out to this email
 
 This email is for projects only!
 Wolf - 0x00w0lf@proton.me
+
+</p>
 Project Link: [https://github.com/0x00wolf/hkrsai](https://github.com/0x00wolf/hkrsai)
 </center>
