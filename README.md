@@ -166,6 +166,7 @@ resuming the conversation.
 >save reply {None | /path/filename.extension}
 >save response {None | /path/filename.extension}
 >save messages {None | /path/filename.extension}
+>save prompt /path/to/prompts/dir/promptname
 ```
 **info:** Allows the user to extract and save code or text to relative, absolute, or generic file path.
 
@@ -196,9 +197,9 @@ resuming the conversation.
 **command: >reset** 
 ```
 >reset
->reset  # resets the AI assistant
->reset conversation  # resets the AI assistant
->reset log  # starts a new log file
+>reset  # resets the AI assistant 
+>reset conversation  # also resets the AI assistant
+>reset log  # starts a new log file and maintains conversation
 ```
 **info:** Allows the user to reset the conversation or start a new log.
 
