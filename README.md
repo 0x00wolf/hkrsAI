@@ -2,7 +2,7 @@
 
 <!-- ABOUT THE PROJECT -->
 # **hkrsAI.v2**
-![alt text](imgs/banner.jpeg)
+![alt text](./imgs/banner.jpeg)
 Version 2 is out!
 
 ## The keep it simple approach to integrating the world's most powerful AI into your Linux terminal.
