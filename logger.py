@@ -86,7 +86,6 @@ class Logger:
     # >save
     def save(self, arguments, conversation):
         """Saves information at the user's request"""
-        print(arguments)
         if len(arguments) == 0:
             self._update_savefile()
             self._save_text(self.savefile, conversation.reply)
@@ -94,19 +93,17 @@ class Logger:
             return
         if len(arguments) != 2:
             self._update_savefile()
-            print(self.savefile)
         else:
             self.savefile = arguments[1]
-            print(self.savefile)
         if arguments[0] == 'code':
-            p = re.compile("```((.|\n)*)```")
+            p = re.compile(r"```((.|\n)*)```")
             match = re.search(p, conversation.reply)
             if match:
                 self._save_text(self.savefile, match.group())
                 print(f'[*] saving code to ~ {self.savefile}')
             else:
-                print('[*] no code found')
-        elif arguments[0] == 'reply':
+                print('[*] error: regex failed.\n[*] ensure that GPT presents code in blocks ```code```')
+        if arguments[0] == 'reply':
             self._save_text(self.savefile, conversation.reply)
             print(f'[*] saving reply to ~ {self.savefile}')
         elif arguments[0] == 'response':
@@ -135,4 +132,4 @@ class Logger:
         """Dumps a JSON object to a file"""
         with open(json_file, 'w') as f:
             json.dump(json_dict, f, indent=6)
-
+            
