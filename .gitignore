@@ -1,5 +1,0 @@
-git rm -r --cached .imgs/
-git rm -r --cached .LICENSE
-
-.LICENSE
-.imgs/
