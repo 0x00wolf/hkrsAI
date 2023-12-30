@@ -3,7 +3,7 @@
 # HkrsAI.v2
 
 ---
-![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
+![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/logo.png)
 
 ---
 
