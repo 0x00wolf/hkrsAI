@@ -112,10 +112,9 @@ class Dispatcher:
         return gpt, conversation, logger
 
     # >insert
-    @staticmethod
-    def insert(gpt: GPT, conversation: Conversation, action: Action, logger: Logger):
+    def insert(self, gpt: GPT, conversation: Conversation, action: Action, logger: Logger):
         """While thinking: Appends the contents of a file to the query with the >insert command"""
-        insert_me = fetch_contents(action.arguments[0])
+        insert_me = self._fetch_contents(action.arguments[0])
         conversation.query += f'{conversation.query}\n{insert_me}'
         return gpt, conversation, logger
 
