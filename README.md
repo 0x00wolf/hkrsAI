@@ -1,9 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-<p align="center">
-   
-# HkrsAI.v2
-
-</p>
+<p align="center"><title>HkrsAI.v2</title></p>
 
 ---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
