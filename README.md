@@ -28,14 +28,10 @@ Version 2 is thanks to guidance (code reviews) that I received from a dear frien
 
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
-</p>
-
 ---
 <p align="center">
    
 # Index
-
-</p>
 
 [Getting-Started](#Getting-Started)
 [At-Runtime](#At-Runtime)
@@ -47,21 +43,14 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 ----
 
-<p align="center">
-   
 <!-- GETTING STARTED -->
 ## Getting Started:
 
-</p>
-<p align=center>
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
-</p>
 
-<p align="center">
    
 **Installation**
 
-</p>
 1. Get an API Key at [https://example.com](https://platform.openai.com/signup)](https://platform.openai.com/signup)
 2. Clone the repo
    ```sh
