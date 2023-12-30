@@ -76,7 +76,9 @@ To edit the premade prompts (highly suggested as some contain generic first ques
 
 ---
 **command:** 
-`>stop`
+```
+>stop
+```
 
 **info:** Sets thinking=True, halting messages being sent to GPT. While thinking=True, \
 new inputs are appended to the query with a '\n', allowing the user to create a stacked query \
@@ -85,7 +87,9 @@ shell, as well as use the '>insert' command (see below).
 
 ---
 **command:** 
-`>flush`
+```
+>flush
+```
 
 **info:** While thinking=True, clears the value stored in the query. Aka, the fat fingers insurance 
 clause.
@@ -102,8 +106,9 @@ clause.
 
 ---
 **command:** 
-
-`>start`
+```
+>start
+```
 
 **info:** Set thinking=False. The next input will trigger sending the stored query to GPT, \
 resuming the conversation.
@@ -170,7 +175,9 @@ resuming the conversation.
 
 ---
 **command:** 
-`>exit`
+```
+>exit
+```
 
 **info:** Quit the program.
 
