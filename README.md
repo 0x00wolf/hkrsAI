@@ -12,7 +12,7 @@
    
 **Version 2 is out!**
 
-HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow seamlessly. Features like code extraction, and the ability to insert the contents of files with a command. granular control over the OpenAI API's parameters. 
+HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow seamlessly. Features like code extraction, and the ability to insert the contents of files with a command. HkrsAI provides granular control over the OpenAI API's parameters. 
 
 hkrsAI is modeled as a finite state machine, allowing you to perpetually engage in conversations with custom AIs for any circumstance. The program includes 100's of premade system prompts from the most popular repos on Github. You can set a custom prompt, or select from pre-made fonts from a convenient menu. You can reset the conversation at any time, and input a new font. The program is also scriptable, and command-line arguments can control any of the API parameters at runtime.
 
