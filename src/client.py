@@ -1,5 +1,4 @@
 import sys
-
 import openai
 import json
 from src.gpt import GPT
