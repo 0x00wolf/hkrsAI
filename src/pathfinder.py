@@ -9,8 +9,8 @@ CONFIG_INIT = {'log_number': 0, 'api_key': ''}
 
 class PathFinder:
     """Class that returns an object with necessary paths for runtime operations"""
-    def __init__(self):
-        self.cwd = self._get_cwd()
+    def __init__(self, cwd: str):
+        self.cwd = cwd
         self.config = f'{self.cwd}/config.json'
         self.logs = f'{self.cwd}/logs'
         self.prompts = f'{self.cwd}/prompts'
