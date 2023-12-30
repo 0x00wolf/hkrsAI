@@ -1,3 +1,2 @@
-git rm -rf --cached .
-.LICENSE
-imgs/
+*.LICENSE
+/imgs/
