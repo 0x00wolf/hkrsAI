@@ -5,7 +5,7 @@
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/banner.jpg)
 Version 2 is out!
 
-## The keep it simple approach to integrate ChatGPT into your Linux terminal.
+## The keep it simple approach to integrating ChatGPT into your Linux terminal.
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
 
