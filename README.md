@@ -4,6 +4,7 @@
 # **hkrsAI.v2**
 ---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
+<sub>image by the author</sub>
 
 ## Description:
 **Version 2 is out!**
