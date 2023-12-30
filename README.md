@@ -1,23 +1,16 @@
 <!-- ABOUT THE PROJECT -->
-<p align="center">
-   
-# HkrsAI.v2
 
-</p>
+# HkrsAI.v2
 
 ---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
 
-<p align="center"><sub>image by the author</sub></p>
-
 ---
-<p align="center">
 
 ## Description:
 
    
 **Version 2 is out!**
-
 
 HkrsAI is designed to increase the productivity of programmers and pentestests by integrating ChatGPT into their workflow more seamlessly. With code extraction, the ability to insert the contents of files with a single, and granular control over the OpenAI API's parameters. 
 
@@ -28,17 +21,16 @@ Version 2 is thanks to guidance (code reviews) that I received from a dear frien
 I built hkrsAI as a daily use productivity tool for myself, and I absolutely love it. I hope you will too!
 
 ---
-
    
 # Index
 
-[Getting-Started](#Getting-Started)
-[At-Runtime](#At-Runtime)
-[Command-Line-Arguments](#Command-Line-Arguments)
-[System-Prompts](#System-Prompts)
-[Logging](#Logging)
-[Workflow-Integration](#Workflow-Integration)
-[Context-Management-Controls](#Context-Management-Controls)
+1. [Getting-Started](#Getting-Started)
+2. [At-Runtime](#At-Runtime)
+3. [Command-Line-Arguments](#Command-Line-Arguments)
+4. [System-Prompts](#System-Prompts)
+5. [Logging](#Logging)
+6. [Workflow-Integration](#Workflow-Integration)
+7. [Context-Management-Controls](#Context-Management-Controls)
 
 ----
 
@@ -47,7 +39,6 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
-   
 **Installation**
 
 1. Get an API Key at [https://example.com](https://platform.openai.com/signup)](https://platform.openai.com/signup)
