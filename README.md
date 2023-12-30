@@ -19,14 +19,20 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 
 # Index
 
-[Getting Started](#Getting-Started)
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+[Getting-Started](#Getting-Started)
+[At-Runtime](#At-Runtime)
+[Command-Line-Arguments](#Command-Line-Arguments)
+[System-Prompts](#System-Prompts)
+[Logging](#Logging)
+[Workflow-Integration](#Workflow-Integration)
+[Context-Management-Controls](#Context-Management-Controls)
+----
 <!-- GETTING STARTED -->
 ## Getting Started:
 
 hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
-**Steps to install:**
+**Installation**
 
 1. Get an API Key at [https://example.com](https://platform.openai.com/signup)](https://platform.openai.com/signup)
 2. Clone the repo
