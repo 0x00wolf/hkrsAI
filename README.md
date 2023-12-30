@@ -2,6 +2,7 @@
 
 <!-- ABOUT THE PROJECT -->
 # **hkrsAI.v2**
+---
 ![alt text](https://github.com/0x00wolf/hkrsAI/blob/main/imgs/git.png)
 
 ## Description:
@@ -26,6 +27,7 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 [Logging](#Logging)
 [Workflow-Integration](#Workflow-Integration)
 [Context-Management-Controls](#Context-Management-Controls)
+
 ----
 <!-- GETTING STARTED -->
 ## Getting Started:
