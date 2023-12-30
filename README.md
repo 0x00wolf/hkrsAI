@@ -107,6 +107,10 @@ At the beginning of runtime, if no prompt was supplied via the command-line argu
 
 To edit the premade prompts (highly suggested as some contain generic first questions), simpy edit the associated file in it's respective category within the prompts directory. To add new prompts, place an extensionless text file in the folder best representing your prompt's category.The next time you set the system prompt in hkrsAI your new prompt will be waiting for you.
 
+**Adding a new prompt:**
+
+Save your system-prompt as text in a file without an extension. Place the file in the ./src/prompts/category that best suits your prompt. It will be available the next time you call >reset or start the program.
+
 ---
 
 ## Logging
@@ -116,6 +120,8 @@ By default, hkrsAI will log the messages generated back and forth to ChatGPT. Th
 The options for log format are 'txt' or 'json'. If 'txt' is selected, the logs will be saved as human readable text. 
 
 Both options can be set during runtime using the appropriate context management command.
+
+**The logs directory** will be generated as ./src/logs. Any >save commands made that do not specify a path will write the save-file to the logs directory. If the config.json gets deleted, the logger will check to see if a file exists before saving a log, and will increase the log number until no file exists. 
 
 ---
 
