@@ -30,7 +30,7 @@ I built hkrsAI as a daily use productivity tool for myself, and I absolutely lov
 4. [System-Prompts](#System-Prompts)
 5. [Logging](#Logging)
 6. [Workflow-Integration](#Workflow-Integration)
-7. [Context-Management-Controls](#Context-Management-Controls)
+7. [Context-Management-Commands](#Context-Management-Commands)
 
 ----
 
