@@ -27,7 +27,7 @@ class Logger:
         if 1 != new_value != 2:
             raise TypeError
         else:
-            self._level = new_valuel
+            self._level = new_value
 
     @property
     def format(self):
