@@ -122,7 +122,7 @@ class Dispatcher:
     @staticmethod
     def flush(gpt: GPT, conversation: Conversation, action: Action, logger: Logger):
         """While thinking: Resets the conversation.query to ''"""
-        conversation = conversation.reconsider()
+        conversation = conversation.breath()
         return gpt, conversation, logger
 
     # >save
