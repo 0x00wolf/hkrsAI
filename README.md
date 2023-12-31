@@ -42,6 +42,8 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 
 **Installation**
 
+Youtube installation and usage demo: [https://youtu.be/NF72un9Ie0c?si=Ys_U4qexGgQG88KS](https://youtu.be/NF72un9Ie0c?si=Ys_U4qexGgQG88KS)
+
 1. Get an API Key at [https://platform.openai.com/signup](https://platform.openai.com/signup)](https://platform.openai.com/signup)
 2. Clone the repo
    ```sh
@@ -60,10 +62,6 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 7. To view context management commands input '>help', after an AI assistant has been defined.
 
 ---
-
-## Installation & Usage demo:
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NF72un9Ie0c/0.jpg)](https://www.youtube.com/watch?v=NF72un9Ie0c)
 
 ## At Runtime
 
