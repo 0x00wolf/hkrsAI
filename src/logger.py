@@ -27,8 +27,7 @@ class Logger:
         if 1 != new_value != 2:
             raise TypeError
         else:
-            self._level = new_value
-            return self._level
+            self._level = new_valuel
 
     @property
     def format(self):
@@ -38,10 +37,8 @@ class Logger:
     def format(self, new_value: str):
         if new_value == 'txt' or new_value == 'json':
             self._format = new_value
-            return self._format
         else:
             self._format = new_value
-            return self._format
 
     def new_log(self):
         self.number = self._next_number()
@@ -80,7 +77,8 @@ class Logger:
         elif self.level == 2 and self.format == 'txt':
             with open(self.file, 'w') as f:
                 for i in range(len(conversation.messages)):
-                    f.write(f"{conversation.messages[i]['role']}:--------------\n\n{conversation.messages[i]['content']}\n\n")
+                    f.write(f"{conversation.messages[i]['role']}:--------------\n\n" \
+                            f"{conversation.messages[i]['content']}\n\n")
                 return self
 
     # >save
@@ -132,4 +130,3 @@ class Logger:
         """Dumps a JSON object to a file"""
         with open(json_file, 'w') as f:
             json.dump(json_dict, f, indent=6)
-
