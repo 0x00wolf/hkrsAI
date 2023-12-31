@@ -61,6 +61,9 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 
 ---
 
+## Installation & Usage demo:
+[![hkrsAI YouTube Demo](https://youtu.be/NF72un9Ie0c?si=QZi3ixTsD4tgNoqe)](https://youtu.be/NF72un9Ie0c?si=QZi3ixTsD4tgNoqe)
+
 ## At Runtime
 
 At the beginning of each runtime, hkrsAI will check to see if the JSON config file and a logs directory are present in the program's parent directory. The config file tracks the current log number, and stores the user's API key for communicating with ChatGPT. If either the logs folder or config.json are missing the program will generate them. HkrsAI then checks for a stored API key. If none is found, it prompts you to input a new key. Everytime a new key is input, or the API key is retrieved from the config.json, hkrsAI will verify the key is valid with the OpenAI API. 
