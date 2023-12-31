@@ -63,7 +63,7 @@ hkrsAI uses one non-standard Python Library, the OpenAI lib: [https://platform.o
 
 ## Installation & Usage demo:
 
-[![hkrsAI YouTube demo](https://img.youtube.com/NF72un9Ie0c/0.jpg)](https://www.youtube.com/watch?v=NF72un9Ie0c)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NF72un9Ie0c/0.jpg)](https://www.youtube.com/watch?v=NF72un9Ie0c)
 
 ## At Runtime
 
