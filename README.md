@@ -206,7 +206,6 @@ resuming the conversation.
 >save reply {None | /path/filename.extension}
 >save response {None | /path/filename.extension}
 >save messages {None | /path/filename.extension}
->save prompt /path/to/prompts/dir/promptname
 ```
 
 ---
