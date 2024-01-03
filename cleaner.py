@@ -1,3 +1,4 @@
+# Simple script to save JSON logs into a human readable txt format
 import sys
 import json
 
